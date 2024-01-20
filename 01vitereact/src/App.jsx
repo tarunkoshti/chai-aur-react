@@ -1,10 +1,10 @@
 import React from 'react'
-
+import Chai from './chai'
 const App = () => {
   return (
-    <div>
-      chai aur react | Tarun Koshti
-    </div>
+    <>
+      <Chai/>
+    </>
   )
 }
 
