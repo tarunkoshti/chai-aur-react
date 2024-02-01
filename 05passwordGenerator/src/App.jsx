@@ -57,7 +57,7 @@ const App = () => {
             ref={passwordRef}
           />
 
-          <button onClick={copyPasswordToClipbord} className='outline-noe bg-blue-700 text-white px-3 py.5 shrink-0 active:mix-blend-overlay'>copy</button>
+          <button onClick={copyPasswordToClipbord} className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0 active:mix-blend-overlay'>copy</button>
         </div>
 
         <div className='flex text-sm gap-x-2'>
