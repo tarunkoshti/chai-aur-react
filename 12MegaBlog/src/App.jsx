@@ -1,11 +1,11 @@
 import React from 'react'
 import './App.css'
-import config from './config/config'
+import conf from './conf/conf'
 
 
 const App = () => {
   console.log(import.meta.env.VITE_APPWRITE_URL)
-  console.log(config.appwriteProjectId)
+  console.log(conf.appwriteProjectId)
   return (
     <div>
       <h1>A blog app with Appwrite</h1>
