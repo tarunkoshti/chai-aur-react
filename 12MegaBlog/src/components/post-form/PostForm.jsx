@@ -2,7 +2,7 @@ import React, { useCallback, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { Button, Input, Select, RTE } from '../index'
 import appwriteService from "../../appwrite/config"
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 
@@ -19,20 +19,20 @@ const PostForm = ({ post }) => {
     })
 
     const navigate = useNavigate()
-    const userData = useSelector(state => state.auth.userData)
+    const userData = useSelector(state => state.authReducer.userData)
 
     const submit = async (data) => {
         if (post) {
             const file = data.image[0] ? appwriteService.uploadFile(data.image[0]) : null
 
             if (file) {
-                appwriteService.deleteFile(post.featuredImage)
+                appwriteService.deleteFile(post.feturedImage)
             }
 
             const dbPost = await appwriteService.updatePost(
                 post.$id, {
                 ...data,
-                featuredImage: file ? file.$id : undefined
+                feturedImage: file ? file.$id : undefined
             }
             )
 
@@ -43,11 +43,11 @@ const PostForm = ({ post }) => {
 
         else {
 
-            const file = data.image[0] ? appwriteService.uploadFile(data.image[0]) : null
+            const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null
 
             if (file) {
                 const fileId = file.$id;
-                data.featuredImage = fileId;
+                data.feturedImage = fileId;
                 const dbPost = await appwriteService.createPost({
                     ...data,
                     userId: userData.$id
@@ -116,7 +116,7 @@ const PostForm = ({ post }) => {
                 {post && (
                     <div className="w-full mb-4">
                         <img
-                            src={appwriteService.getFilePreview(post.featuredImage)}
+                            src={appwriteService.getFilePreview(post.feturedImage)}
                             alt={post.title}
                             className="rounded-lg"
                         />

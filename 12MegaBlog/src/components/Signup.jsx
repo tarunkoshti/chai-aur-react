@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import authService from '../appwrite/auth'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { login } from '../store/Reducers/authSlice'
 import { Button, Input, Logo } from './index'
 import { useDispatch } from 'react-redux'
@@ -84,7 +84,7 @@ const Signup = () => {
                         <Button
                             type='submit'
                             className='w-full'
-                        ></Button>
+                        >Signup</Button>
 
                     </div>
                 </form>

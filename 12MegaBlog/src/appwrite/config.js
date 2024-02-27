@@ -22,7 +22,6 @@ export class Service {
                 slug,
                 {
                     title,
-                    // slug,
                     content,
                     feturedImage,
                     status,
