@@ -8,6 +8,7 @@ import authService from './appwrite/auth'
 import { Header, Footer } from './components/index'
 
 import { Outlet } from 'react-router-dom'
+import { Editor } from '@tinymce/tinymce-react'
 // import conf from './conf/conf'
 
 
@@ -36,6 +37,7 @@ const App = () => {
         <Header />
         <main>
           {/* <Outlet /> */}
+          <Editor />
         </main>
         <Footer />
       </div>
