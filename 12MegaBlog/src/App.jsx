@@ -36,8 +36,8 @@ const App = () => {
       <div className='w-full block'>
         <Header />
         <main>
-          {/* <Outlet /> */}
-          <Editor />
+          <Outlet />
+          {/* <Editor /> */}
         </main>
         <Footer />
       </div>
